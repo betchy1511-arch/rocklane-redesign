@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table Rock Lake Boat Rentals | Rock Lane Marina, Branson MO</title>
+<meta name="description" content="Skip the drive. Your boat is already on the water. Rock Lane Marina is the closest full-service marina to Indian Point on Table Rock Lake. Half-day and full-day rentals on luxury tritoons, pontoons, ski boats, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #161616;
+    --bg-2: #1f1f1f;
+    --bg-3: #2a2a2a;
+    --gold: #B2850E;
+    --gold-bright: #D39E13;
+    --gold-soft: rgba(211,158,19,0.15);
+    --cream: #f9f6ef;
+    --text: #ffffff;
+    --text-muted: rgba(255,255,255,0.7);
+    --text-faint: rgba(255,255,255,0.5);
+    --border: rgba(255,255,255,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Raleway', arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; line-height: 1.2; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(22, 22, 22, 0.92);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold-bright); letter-spacing: 0.5px; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { color: var(--text-muted); font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold-bright); }
+  .nav-cta {
+    background: var(--gold);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold-bright); }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 92vh;
+    background:
+      linear-gradient(135deg, rgba(22,22,22,0.55) 0%, rgba(22,22,22,0.85) 100%),
+      url('https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 80px;
+    position: relative;
+  }
+  .hero-grain {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(22,22,22,0.6) 100%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 820px; }
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--gold-bright);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(211,158,19,0.3);
+  }
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 72px);
+    margin-bottom: 28px;
+    line-height: 1.05;
+  }
+  .hero h1 .accent { color: var(--gold-bright); display: block; font-style: italic; font-size: 0.82em; font-weight: 600; }
+  .hero p.lede {
+    font-size: 19px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 640px;
+  }
+  .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: var(--gold); color: #fff; }
+  .btn-primary:hover { background: var(--gold-bright); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1.5px solid var(--gold-bright);
+  }
+  .btn-outline:hover { background: var(--gold-soft); }
+
+  .hero-trust {
+    display: flex;
+    gap: 40px;
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+  .hero-trust-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-muted); }
+  .hero-trust-item strong { color: var(--gold-bright); font-weight: 600; }
+
+  /* ============ SECTION BASE ============ */
+  section { padding: 100px 0; }
+  .section-header { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+  .section-eyebrow {
+    color: var(--gold-bright);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .section-header h2 {
+    font-size: clamp(32px, 4.5vw, 48px);
+    margin-bottom: 20px;
+  }
+  .section-header h2 .accent { color: var(--gold-bright); font-style: italic; }
+  .section-header p { color: var(--text-muted); font-size: 17px; }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold-bright);
+    margin: 0 auto 24px;
+  }
+
+  /* ============ FLEET ============ */
+  .fleet { background: var(--bg-2); }
+  .fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+  }
+  .boat-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .boat-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+  .boat-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .boat-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(22,22,22,0.6) 100%);
+  }
+  .boat-stats {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  .boat-stat {
+    background: rgba(22,22,22,0.85);
+    color: var(--gold-bright);
+    padding: 5px 11px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(211,158,19,0.4);
+  }
+  .boat-body { padding: 26px 24px 28px; flex: 1; display: flex; flex-direction: column; }
+  .boat-body h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    font-family: 'Playfair Display', serif;
+  }
+  .boat-body p { color: var(--text-muted); font-size: 15px; flex: 1; }
+  .boat-cta {
+    margin-top: 20px;
+    color: var(--gold-bright);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .fleet-cta { text-align: center; margin-top: 56px; }
+
+  /* ============ RATES ============ */
+  .rates {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  }
+  .rates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+  .rate-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .rate-card.featured {
+    background: linear-gradient(180deg, var(--bg-2) 0%, rgba(178,133,14,0.08) 100%);
+    border-color: var(--gold);
+    transform: scale(1.02);
+  }
+  .rate-card .icon {
+    font-size: 36px;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .rate-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+  }
+  .rate-card .duration {
+    color: var(--gold-bright);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  .rate-card p { color: var(--text-muted); font-size: 15px; }
+  .rate-card .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .booking-panel {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 48px;
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .booking-panel h3 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .booking-panel p { color: var(--text-muted); margin-bottom: 28px; font-size: 16px; }
+  .booking-panel .phone-row {
+    margin-top: 20px;
+    color: var(--text-faint);
+    font-size: 14px;
+  }
+  .booking-panel .phone-row a {
+    color: var(--gold-bright);
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+  }
+  .booking-panel .phone-row a:hover { border-color: var(--gold-bright); }
+
+  /* ============ WHY RENT ============ */
+  .why { background: var(--bg); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .why-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 6px;
+    padding: 36px 32px;
+    transition: transform 0.25s;
+  }
+  .why-card:hover { transform: translateX(6px); }
+  .why-card .icon { font-size: 32px; margin-bottom: 16px; display: block; }
+  .why-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+  .why-card p { color: var(--text-muted); font-size: 15.5px; }
+  .why-card a { color: var(--gold-bright); font-weight: 600; border-bottom: 1px solid transparent; }
+  .why-card a:hover { border-color: var(--gold-bright); }
+
+  /* ============ INCLUDED ============ */
+  .included { background: var(--bg-2); }
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .included-col {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 36px 30px;
+  }
+  .included-col h3 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: var(--gold-bright);
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .included-col ul { list-style: none; padding: 0; }
+  .included-col li {
+    color: var(--text-muted);
+    font-size: 15px;
+    padding: 10px 0 10px 28px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .included-col li:last-child { border-bottom: none; }
+  .included-col li::before {
+    content: '✓';
+    position: absolute;
+    left: 0; top: 10px;
+    color: var(--gold-bright);
+    font-weight: 700;
+  }
+
+  /* ============ FAQ ============ */
+  .faq { background: var(--bg); }
+  .faq-list { max-width: 860px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+  .faq-item summary {
+    cursor: pointer;
+    padding: 26px 0;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Playfair Display', serif;
+    transition: color 0.2s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    color: var(--gold-bright);
+    font-size: 26px;
+    font-weight: 300;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item:hover summary { color: var(--gold-bright); }
+  .faq-item p {
+    padding: 0 0 26px;
+    color: var(--text-muted);
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  /* ============ CTA ============ */
+  .final-cta {
+    background:
+      linear-gradient(135deg, rgba(22,22,22,0.7) 0%, rgba(22,22,22,0.9) 100%),
+      url('https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=1920&q=80') center/cover;
+    padding: 120px 0;
+    text-align: center;
+  }
+  .final-cta h2 {
+    font-size: clamp(34px, 5vw, 56px);
+    margin-bottom: 18px;
+  }
+  .final-cta h2 .accent { color: var(--gold-bright); font-style: italic; }
+  .final-cta p { color: var(--text-muted); font-size: 18px; margin-bottom: 36px; max-width: 600px; margin-inline: auto; }
+  .final-cta .hero-buttons { justify-content: center; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: #0c0c0c;
+    padding: 50px 0 30px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  footer p { color: var(--text-faint); font-size: 14px; margin-bottom: 8px; }
+  footer a { color: var(--gold-bright); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .rates-grid, .why-grid, .included-grid { grid-template-columns: 1fr; }
+    .rate-card.featured { transform: scale(1); }
+    section { padding: 70px 0; }
+    .booking-panel { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Rock Lane</a>
+    <div class="nav-links">
+      <a href="#fleet">Fleet</a>
+      <a href="#rates">Rates</a>
+      <a href="#why">Why Us</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://rentals.rocklane.com" class="nav-cta">Reserve a Boat</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grain"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Rock Lane Marina · Table Rock Lake</span>
+      <h1>
+        Table Rock Lake Boat Rentals
+        <span class="accent">Pontoons, Tritoons, Ski Boats &amp; More</span>
+      </h1>
+      <p class="lede">
+        Skip the drive. Your boat is already on the water. Rock Lane Marina is the closest full-service marina to Indian Point on Table Rock Lake. Half-day and full-day rentals on luxury tritoons, family pontoons, ski boats, fishing boats, kayaks, and more.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://rentals.rocklane.com" class="btn btn-primary">🚤 Reserve Your Boat</a>
+        <a href="#fleet" class="btn btn-outline">See Fleet &amp; Rates</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><strong>6 min</strong> from Silver Dollar City</div>
+        <div class="hero-trust-item"><strong>250HP</strong> luxury tritoons available</div>
+        <div class="hero-trust-item"><strong>8 AM to 9 PM</strong> on-water support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section class="fleet" id="fleet">
+  <div class="container">
+    <div class="section-header">
+      <div class="divider"></div>
+      <span class="section-eyebrow">Our Rental Fleet</span>
+      <h2>Built for the <span class="accent">Lake Day</span> You're Picturing</h2>
+      <p>Every boat in the Rock Lane fleet is modern, well-maintained, and equipped for wakeboarding, water skiing, and tubing. Coast Guard approved life jackets are provided for every passenger.</p>
+    </div>
+
+    <div class="fleet-grid">
+      <article class="boat-card">
+        <div class="boat-img" style="background-image: url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80');">
+          <div class="boat-stats">
+            <span class="boat-stat">15 passengers</span>
+            <span class="boat-stat">250 HP</span>
+          </div>
+        </div>
+        <div class="boat-body">
+          <h3>🛥️ Crest 250 Tritoon</h3>
+          <p>Our flagship luxury tritoon. Perfect for large groups who want all-day comfort, power for water sports, and premium seating.</p>
+          <a href="https://rentals.rocklane.com" class="boat-cta">Check Availability →</a>
+        </div>
+      </article>
+
+      <article class="boat-card">
+        <div class="boat-img" style="background-image: url('https://images.unsplash.com/photo-1601379760883-1bb497d3b2b9?auto=format&fit=crop&w=800&q=80');">
+          <div class="boat-stats">
+            <span class="boat-stat">14 passengers</span>
+            <span class="boat-stat">200 HP</span>
+          </div>
+        </div>
+        <div class="boat-body">
+          <h3>🌊 25 ft Double-Decker Tritoon with Slide</h3>
+          <p>The ultimate lake day boat. Climb the upper deck, splash down the slide, and make memories that last all summer.</p>
+          <a href="https://rentals.rocklane.com" class="boat-cta">Check Availability →</a>
+        </div>
+      </article>
+
+      <article class="boat-card">
+        <div class="boat-img" style="background-image: url('https://images.unsplash.com/photo-1572979040468-3fe6cc6cc15a?auto=format&fit=crop&w=800&q=80');">
+          <div class="boat-stats">
+            <span class="boat-stat">15 passengers</span>
+            <span class="boat-stat">225 HP</span>
+          </div>
+        </div>
+        <div class="boat-body">
+          <h3>🏝️ Platinum Tritoon 225HP</h3>
+          <p>Plenty of room, plenty of power, and luxury finishes throughout. A favorite for family reunions and corporate outings.</p>
+          <a href="https://rentals.rocklane.com" class="boat-cta">Check Availability →</a>
+        </div>
+      </article>
+
+      <article class="boat-card">
+        <div class="boat-img" style="background-image: url('https://images.unsplash.com/photo-1518803194621-27188ba362c9?auto=format&fit=crop&w=800&q=80');">
+          <div class="boat-stats">
+            <span class="boat-stat">14 passengers</span>
+            <span class="boat-stat">200 HP</span>
+          </div>
+        </div>
+        <div class="boat-body">
+          <h3>🎢 200HP Crest Double-Decker Tritoon</h3>
+          <p>Double the deck, double the views. Perfect for sunbathers and sightseers who want the best seat on the lake.</p>
+          <a href="https://rentals.rocklane.com" class="boat-cta">Check Availability →</a>
+        </div>
+      </article>
+
+      <article class="boat-card">
+        <div class="boat-img" style="background-image: url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=800&q=80');">
+          <div class="boat-stats">
+            <span class="boat-stat">10 passengers</span>
+            <span class="boat-stat">150 HP</span>
+          </div>
+        </div>
+        <div class="boat-body">
+          <h3>🏄 Chaparral 210 SSI with Tower</h3>
+          <p>The ski and wakeboard machine. Tower-equipped for serious wake sports. Bring your boards, we've got the boat.</p>
+          <a href="https://rentals.rocklane.com" class="boat-cta">Check Availability →</a>
+        </div>
+      </article>
+
+      <article class="boat-card">
+        <div class="boat-img" style="background-image: url('https://images.unsplash.com/photo-1545566239-0b71b2de9b8a?auto=format&fit=crop&w=800&q=80');">
+          <div class="boat-stats">
+            <span class="boat-stat">12 passengers</span>
+            <span class="boat-stat">175 HP</span>
+          </div>
+        </div>
+        <div class="boat-body">
+          <h3>🎣 Tahoe LTZ Tritoon Fishing Boat</h3>
+          <p>Table Rock is one of America's premier bass lakes. Our dedicated fishing tritoon gives you stability, storage, and space for the whole crew.</p>
+          <a href="https://rentals.rocklane.com" class="boat-cta">Check Availability →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="fleet-cta">
+      <a href="https://rentals.rocklane.com" class="btn btn-primary">See Full Fleet &amp; Live Availability →</a>
+    </div>
+  </div>
+</section>
+
+<!-- RATES -->
+<section class="rates" id="rates">
+  <div class="container">
+    <div class="section-header">
+      <div class="divider"></div>
+      <span class="section-eyebrow">Boat Rental Rates &amp; Booking</span>
+      <h2>Pick Your <span class="accent">Time on the Water</span></h2>
+      <p>Pontoon rental rates on Table Rock Lake range based on size, horsepower, and rental duration. Real-time pricing on every boat in our fleet at rentals.rocklane.com.</p>
+    </div>
+
+    <div class="rates-grid">
+      <div class="rate-card">
+        <span class="icon">🌅</span>
+        <h3>Half-Day Morning</h3>
+        <div class="duration">8 AM to 1 PM</div>
+        <p>Five hours of cooler temps, calmer water, and the best fishing window of the day.</p>
+      </div>
+      <div class="rate-card featured">
+        <span class="icon">☀️</span>
+        <span class="badge">Most Popular</span>
+        <h3>Full Day</h3>
+        <div class="duration">8 AM to 6 PM</div>
+        <p>The ultimate lake day. Pack the cooler, bring the tubes, and stay out from sunrise to sunset.</p>
+      </div>
+      <div class="rate-card">
+        <span class="icon">🌇</span>
+        <h3>Half-Day Afternoon</h3>
+        <div class="duration">2 PM to 7 PM</div>
+        <p>Five hours of prime swim time, water sports, and golden-hour cruising back to the dock.</p>
+      </div>
+    </div>
+
+    <div class="booking-panel">
+      <h3>Multi-Day Packages for Resort Guests</h3>
+      <p>Staying at Rock Lane Resort? Ask about packaged pricing on multi-day rentals when you book your room. Real-time availability and instant confirmation on every boat.</p>
+      <a href="https://rentals.rocklane.com" class="btn btn-primary">Check Live Availability</a>
+      <div class="phone-row">
+        Prefer to talk? Call <a href="tel:+14173384433">(417) 338-4433</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY RENT -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="divider"></div>
+      <span class="section-eyebrow">Why Rock Lane Marina</span>
+      <h2>The Closest Full-Service Marina to <span class="accent">Indian Point</span></h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="icon">📍</span>
+        <h3>6 Minutes from Silver Dollar City</h3>
+        <p>Skip the long drive to other marinas. Rock Lane sits in a quiet, protected cove just six minutes from Silver Dollar City. Your boat is ready when you are.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">🏨</span>
+        <h3>Stay &amp; Boat Packages</h3>
+        <p>Lakefront lodging plus boat rental from one place. Walk from your room to the dock in under two minutes. <a href="https://rocklane.com">Book a stay and boat package</a>.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">⛽</span>
+        <h3>On-Site Gas Dock &amp; Marina Store</h3>
+        <p>Fuel up without leaving the resort. Our marina store stocks snacks, drinks, tubes, life jackets, sunscreen, and everything else you forgot to pack.</p>
+      </div>
+      <div class="why-card">
+        <span class="icon">🍹</span>
+        <h3>Boat Up to the Tiki Bar</h3>
+        <p>Rock Island Grill and Tiki Bar, Table Rock's most famous swim-up bar, is steps from the marina. Boat up, grab a cocktail, and enjoy live music every weekend on the Corona Grand Stage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED + REQUIREMENTS -->
+<section class="included">
+  <div class="container">
+    <div class="section-header">
+      <div class="divider"></div>
+      <span class="section-eyebrow">What to Expect</span>
+      <h2>Everything's <span class="accent">Already Onboard</span></h2>
+    </div>
+
+    <div class="included-grid">
+      <div class="included-col">
+        <h3>⏰ Rental Durations</h3>
+        <ul>
+          <li>Half-Day Morning: 8 AM to 1 PM</li>
+          <li>Half-Day Afternoon: 2 PM to 7 PM</li>
+          <li>Full-Day: 8 AM to 6 PM</li>
+          <li>Multi-Day: available for resort guests</li>
+          <li>Packaged pricing on request</li>
+        </ul>
+      </div>
+      <div class="included-col">
+        <h3>✅ Included with Every Rental</h3>
+        <ul>
+          <li>Coast Guard approved life jackets for every passenger</li>
+          <li>Full safety briefing and boat orientation at the dock</li>
+          <li>Tubing, wakeboarding, and water-skiing capability</li>
+          <li>Coolers and storage on board</li>
+          <li>Bimini top for shade on most boats</li>
+          <li>On-water support from our marina team, 8 AM to 9 PM</li>
+        </ul>
+      </div>
+      <div class="included-col">
+        <h3>📋 Rental Requirements</h3>
+        <ul>
+          <li>Primary renter must be 21 years of age or older</li>
+          <li>Valid driver's license required at check-in</li>
+          <li>Credit card on file for fuel and security deposit</li>
+          <li>Missouri does not require a boating license for adults born before January 1, 1984</li>
+          <li>Renters born after must complete a free online boater safety course</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="divider"></div>
+      <span class="section-eyebrow">Frequently Asked Questions</span>
+      <h2>Got Questions? <span class="accent">We've Got Answers.</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How much does it cost to rent a pontoon on Table Rock Lake?</summary>
+        <p>Pontoon rental rates on Table Rock Lake range based on size, horsepower, and rental duration. For real-time pricing on every boat in our fleet, visit <a href="https://rentals.rocklane.com" style="color:var(--gold-bright);">rentals.rocklane.com</a> or call <a href="tel:+14173384433" style="color:var(--gold-bright);">(417) 338-4433</a>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you need a boating license to rent a boat in Missouri?</summary>
+        <p>Adults born before January 1, 1984, do not need a license. Those born on or after must complete a free Missouri Boater Safety Course. We'll help you verify before your rental.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I rent for just a few hours?</summary>
+        <p>Yes. We offer half-day rentals (5 hours) in both morning and afternoon blocks, plus full-day rentals.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if the weather is bad?</summary>
+        <p>Safety first. If conditions are unsafe, we'll work with you to reschedule or refund per our rental agreement. Light rain typically doesn't cancel a rental.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are pets allowed on rental boats?</summary>
+        <p>Well-behaved dogs are welcome on most rentals with prior approval. Please ask when booking.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where do I pick up my rental boat?</summary>
+        <p>All rentals begin at the Rock Lane Marina dock, 611 Rock Lane, Branson, MO 65616. Check-in is at the marina office 30 minutes before your rental start time.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready to <span class="accent">Hit the Water?</span></h2>
+    <p>Real-time availability. Instant confirmation. Your lake day starts with one click.</p>
+    <div class="hero-buttons">
+      <a href="https://rentals.rocklane.com" class="btn btn-primary">🚤 Reserve Your Boat Now</a>
+      <a href="tel:+14173384433" class="btn btn-outline">📞 Call (417) 338-4433</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p><strong style="color:var(--gold-bright);">Rock Lane Marina</strong> · 611 Rock Lane, Branson, MO 65616</p>
+    <p><a href="tel:+14173384433">(417) 338-4433</a> · Open daily 8:00 AM to 9:00 PM</p>
+    <p style="margin-top:20px;font-size:12px;">© Rock Lane Resort. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
